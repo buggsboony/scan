@@ -9,12 +9,13 @@ $_RED ="\033[0;31m";
 $pattern=$argv[1];
 $dir=".";
 $c=4;
-
+$more="";
+if( count($argv)>=3) $more=$argv[2];
 //echo "search...\n";
 //$r = exec("grep -lRi \"$pattern\" $dir", $files);
 
 
-$cmd = "grep -lRi \"$pattern\" $dir";
+$cmd = "grep -lRi \"$pattern\" $dir $more";
 
 $descriptorspec = array(
    0 => array("pipe", "r"),   // stdin is a pipe that the child will read from
